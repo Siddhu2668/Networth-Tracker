@@ -1,0 +1,91 @@
+
+CrediKhaata – Hoppscotch API Test Cheat Sheet
+---------------------------------------------
+
+🔐 1. Register
+Method: POST
+URL: http://localhost:5000/api/auth/register
+Body:
+{
+  "email": "mahendra@example.com",
+  "password": "SuperSecret123"
+}
+
+🔐 2. Login
+Method: POST
+URL: http://localhost:5000/api/auth/login
+Body:
+{
+  "email": "mahendra@example.com",
+  "password": "SuperSecret123"
+}
+Response: { "userId": "...", "token": "..." }
+
+✅ 3. Create Customer
+Method: POST
+URL: http://localhost:5000/api/customers
+Headers:
+Authorization: Bearer <token>
+Content-Type: application/json
+Body:
+{
+  "name": "Ravi Kumar",
+  "phone": "9876543210",
+  "address": "Hyderabad",
+  "trustScore": 8,
+  "creditLimit": 20000
+}
+
+📋 4. View All Customers
+Method: GET
+URL: http://localhost:5000/api/customers
+Headers:
+Authorization: Bearer <token>
+
+💸 5. Create Loan
+Method: POST
+URL: http://localhost:5000/api/loans
+Headers:
+Authorization: Bearer <token>
+Content-Type: application/json
+Body:
+{
+  "customerId": "<customer-id>",
+  "itemDescription": "Rice Bag Credit",
+  "loanAmount": 5000,
+  "issueDate": "2024-05-01",
+  "dueDate": "2024-06-01",
+  "frequency": "monthly",
+  "interestPercent": 2,
+  "graceDays": 5
+}
+
+📄 6. View All Loans
+Method: GET
+URL: http://localhost:5000/api/loans
+Headers:
+Authorization: Bearer <token>
+
+📊 7. Summary Dashboard
+Method: GET
+URL: http://localhost:5000/api/loans/summary
+Headers:
+Authorization: Bearer <token>
+
+💰 8. Create Repayment
+Method: POST
+URL: http://localhost:5000/api/repayments
+Headers:
+Authorization: Bearer <token>
+Content-Type: application/json
+Body:
+{
+  "loanId": "<loan-id>",
+  "amount": 2000
+}
+
+📜 9. Get Repayments
+Method: GET
+URL: http://localhost:5000/api/repayments
+Headers:
+Authorization: Bearer <token>

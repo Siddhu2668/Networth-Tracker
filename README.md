@@ -19,7 +19,7 @@ A simple and powerful backend application built with Node.js and Express.js to h
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Siddhu2668/Networth-Tracker.git
 cd credikhaata
 ```
 
